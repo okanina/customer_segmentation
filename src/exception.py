@@ -1,12 +1,11 @@
 import sys
-from src.logger import logging
 
 def error_message_detail(error, error_detail:sys):
     _,_,exec_tb = error_detail.exc_info()
-    filename=exec_tb.tb_frame.f_code.co_filename
-    error_message="Error message has occured on script [{0}] line number [{1}] error message [{2}]".format(filename, exec_tb.tb_lineno, str(error))
+    filename = exec_tb.tb_frame.f_code.co_filename
+    message = f"Error message has occured on script [{filename}] line number [{exec_tb.tb_lineno}] error message [{str(error)}]"
 
-    return error_message
+    return message
 
 class CustomException(Exception):
     def __init__(self, error, error_detail):

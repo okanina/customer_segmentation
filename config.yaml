@@ -1,0 +1,29 @@
+artifact_root: artifact
+
+data_ingestion:
+  data_ingestion_dir: artifact/data_ingestion
+  local_data_file_path: artifact/data_ingestion/customer_segmentation.csv
+  train_file_path: artifact/data_ingestion/train.csv
+  test_file_path: artifact/data_ingestion/test.csv
+  collection_name: custimer_segmentation2
+
+data_validation:
+  data_validation_dir: artifact/data_validation
+  drift_report_file_path: artifact/data_validation/status.txt
+  
+
+data_transformation:
+    data_transformation_dir: artifact/data_transformation_dir
+    train_file_path: artifact/data_transformation_dir/train.npy
+    test_file_path: artifact/data_transformation_dir/test.npy
+    transformer_object_file_path : artifact/data_transformation_dir/preprocessor.pkl
+
+model_trainer:
+    model_trainer_dir: artifact/model_trainer
+    trained_model_file_path: artifact/model_trainer/model.pkl
+    expected_accuracy_score:
+
+model_evaluation:
+    model_evaluation_dir: artifact/model_evaluation
+    metrics_file_path: artifact/model_evaluation/metrics.json
+
