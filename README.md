@@ -151,7 +151,7 @@ customer_segmentation/
 
 ## Demo
 
-![Training Pipeline Demo](assets/predictoin_pipeline.mp4)
+![Training Pipeline Demo](assets/predictoin_pipeline.git)
 
 ---
 
