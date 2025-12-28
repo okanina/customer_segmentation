@@ -1,0 +1,17 @@
+numpy
+pandas
+pyyaml
+ensure
+dill
+typing
+setuptools
+pymongo
+evidently
+dataclasses
+python-box
+matplotlib
+seaborn
+xgboost
+scikit-learn
+category_encoders
+-e .

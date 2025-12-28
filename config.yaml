@@ -1,0 +1,33 @@
+artifact_root: artifact
+
+data_ingestion:
+  data_ingestion_dir: artifact/data_ingestion
+  local_data_file_path: artifact/data_ingestion/customer_segmentation.csv
+  test_file_path: artifact/data_ingestion/test.csv
+  database_name: data_science
+  collection_name: customer_segmentation
+
+data_validation:
+  data_validation_dir: artifact/data_validation
+  drift_report_file_path: artifact/data_validation/status.txt  
+
+data_transformation:
+    data_transformation_dir: artifact/data_transformation
+    transformed_local_file_path: artifact/data_transformation/customer_segmentation.npy
+    transformer_object_file_path : artifact/data_transformation/preprocessor.pkl
+
+data_clustering:
+    data_clustering_dir: artifact/data_clustering
+    target_train_file_path: artifact/data_clustering/train_target.npy
+    target_test_file_path: artifact/data_clustering/test_target.npy
+    clusters_file_path: artifact/data_clustering/labels.csv
+
+model_trainer:
+    model_trainer_dir: artifact/model_trainer
+    trained_model_file_path: artifact/model_trainer/model.pkl
+    models: dict    
+
+model_evaluation:
+    model_evaluation_dir: artifact/model_evaluation
+    metrics_file_path: artifact/model_evaluation/classification_report.txt
+
