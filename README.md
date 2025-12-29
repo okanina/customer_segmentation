@@ -1,9 +1,24 @@
-## Analysis of Customer Behaviour and Segmentation (In Progress)
+## Analysis of Customer Behaviour and Segmentation (Complete.)
+
+<p align="center">
+  <img src="assets/training_pipeline_and_upsert.gif" width="700">
+</p>
 
 ## Project Overview
 
 This project focuses on exploring customer engagement and purchasing patterns.  
 The goal is to segment customers into clusters based on their behavioural and demographic attributes.
+
+---
+## Tech Stack
+
+- Python 3.13.10
+- Pandas, NumPy, Scikit-learn
+- KMeans Clustering
+- MongoDB
+- Streamlit
+- YAML-based configuration
+- GitHub for version control
 
 ---
 
@@ -56,7 +71,7 @@ The dataset was uploaded to a cloud-hosted database and ingested directly into t
 
 ## Notes on Model Evaluation
 
-This is a cluster segmentation project that uses labels as artificial labels, **cluster-generated labels** (pseudo-labels from KMeans) to train classification models.  
+This is a cluster segmentation project that uses cluster labels as artificial labels, **cluster-generated labels** (pseudo-labels from KMeans) to train Supervised Learning models.  
 As a result, high classification accuracy reflects the model’s ability to **replicate cluster boundaries**, rather than predict a natural ground-truth label.
 
 ---
@@ -65,95 +80,47 @@ As a result, high classification accuracy reflects the model’s ability to **re
 
 The project is structured around modular data science pipelines implemented in the src/components and src/pipeline packages. Configuration is managed centrally via YAML files and configuration classes. Experiments and exploratory work are tracked in versioned notebooks. Persistent storage is handled through MongoDB using the persistence module, and a Streamlit UI enables real-time customer inference.
 
-
-customer_segmentation/
-│
-├── config/
-│   ├── config.yaml
-│   ├── param.yaml
-│   └── schema.yaml
-│
-├── notebooks/
-│   ├── 01_exploratory_data_analysis.ipynb
-│   ├── 02_clustering_experiments.ipynb
-│   └── 03_cluster_profiling.ipynb
-│
-├── src/
-│   ├── components/
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   ├── data_clustering.py
-│   │   ├── model_trainer.py
-│   │   └── model_evaluation.py
-│   │
-│   ├── pipeline/
-│   │   ├── training_pipeline.py
-│   │   └── prediction_pipeline.py
-│   │
-│   ├── persistence/
-│   │   ├── database.py
-│   │   └── historic_upsert.py
-│   │
-│   ├── utils/
-│   │   ├── common.py
-│   │   └── model_registry.py
-│   │
-│   ├── entity/
-│   │   ├── config_entity.py
-│   │   └── artifact_entity.py
-│   │
-│   ├── config/
-│   │   ├── __init__.py
-│   │   └── configuration.py
-│   │
-│   ├── constants/
-│   │   └── __init__.py
-│   │
-│   ├── logger.py
-│   └── exception.py
-│
-├── artifact/
-│   ├── data_ingestion/
-│   │   └── customer_segmentation.csv
-│   │
-│   ├── data_transformation/
-│   │   ├── transformed_data.npy
-│   │   └── transformer.pkl
-│   │
-│   ├── data_clustering/
-│   │   ├── train.npy
-│   │   ├── test.npy
-│   │   └── labels.csv
-│   │
-│   ├── model_trainer/
-│   │   └── trained_model.pkl
-│   │
-│   └── model_evaluation/
-│       └── metrics.txt
-│
-├── app.py
-├── pages/
-│   └── account_creation.py
-│
-├── requirements.txt
-├── README.md
-└── .env
-
 ---
 
-## Training Pipeline and Upsert Demo
+## How to Run the Project
 
-![Training Pipeline Demo](assets/training_pipeline_and_upsert.gif)
-
-----
+Clone the Repo:
+```bash```
+  1. git clone https://github.com/okanina/customer_segmentation.git
+    cd customer_segmentation
+  2. python -m venv venv
+  3. pip install -r requirements.txt
+  4. Run training pipeline: python src/pipeline/training_pipeline.py
+  5. Assign historic data to their cluster: python src/persistence/historic_upsert.py
+  6. Launch streamlit app for real-time inference: streamlit_app.py
+     
+---
  
-## Prediction Pipeline
+## Prediction Pipeline Demo
 
-## Demo
-
-![Training Pipeline Demo](assets/predictoin_pipeline.git)
+![Prediction Pipeline Demo](assets/prediction_pipeline.git)
 
 ---
+
+## Result and Insights
+
+After Clustering: The following clusters and Insights were identified
+
+**cluster 1 and 5**: High-spending loyal customers and high satisfation. Cluster 5 with high frequent purchases.
+**cluster 2 and 3**: Moderate spenders, mostly neutral and disatisfied customers at-risk of churning customers
+**Cluster 0 and 4**: Low spenders, also mostly neutral and disatisfied customers at-risk of churning customers.
+
+These segments enable targeted marketing strategies, such as loyal reward to customers that are associated with clusters that are at risk of churning. The segments are also good for taylored recommentations.
+
+<p align="center">
+  <img src="assets/newplot.png" width="700">
+</p>
+---
+
+## Limitations
+
+- Labels are not ground truth they are pseudo-labels
+- Data seems to be synthentic + static which does not reflect real-world seasonality 
 
 ## Future Work
 
