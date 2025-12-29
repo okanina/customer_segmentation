@@ -98,7 +98,7 @@ Clone the Repo:
  
 ## Prediction Pipeline Demo
 
-![Prediction Pipeline Demo](assets/prediction_pipeline.git)
+![Prediction Pipeline Demo](https://github.com/okanina/customer_segmentation/blob/main/assets/prediction_pipeline.gif)
 
 ---
 
