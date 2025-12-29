@@ -147,11 +147,9 @@ customer_segmentation/
 
 ----
  
-## Prediction Pipeline
+## Prediction Pipeline Demo
 
-## Demo
-
-![Training Pipeline Demo](assets/predictoin_pipeline.git)
+![Prediction Pipeline Demo](assets/prediction_pipeline.git)
 
 ---
 
