@@ -65,80 +65,6 @@ As a result, high classification accuracy reflects the model’s ability to **re
 
 The project is structured around modular data science pipelines implemented in the src/components and src/pipeline packages. Configuration is managed centrally via YAML files and configuration classes. Experiments and exploratory work are tracked in versioned notebooks. Persistent storage is handled through MongoDB using the persistence module, and a Streamlit UI enables real-time customer inference.
 
-
-customer_segmentation/
-│
-├── config/
-│   ├── config.yaml
-│   ├── param.yaml
-│   └── schema.yaml
-│
-├── notebooks/
-│   ├── 01_exploratory_data_analysis.ipynb
-│   ├── 02_clustering_experiments.ipynb
-│   └── 03_cluster_profiling.ipynb
-│
-├── src/
-│   ├── components/
-│   │   ├── data_ingestion.py
-│   │   ├── data_transformation.py
-│   │   ├── data_clustering.py
-│   │   ├── model_trainer.py
-│   │   └── model_evaluation.py
-│   │
-│   ├── pipeline/
-│   │   ├── training_pipeline.py
-│   │   └── prediction_pipeline.py
-│   │
-│   ├── persistence/
-│   │   ├── database.py
-│   │   └── historic_upsert.py
-│   │
-│   ├── utils/
-│   │   ├── common.py
-│   │   └── model_registry.py
-│   │
-│   ├── entity/
-│   │   ├── config_entity.py
-│   │   └── artifact_entity.py
-│   │
-│   ├── config/
-│   │   ├── __init__.py
-│   │   └── configuration.py
-│   │
-│   ├── constants/
-│   │   └── __init__.py
-│   │
-│   ├── logger.py
-│   └── exception.py
-│
-├── artifact/
-│   ├── data_ingestion/
-│   │   └── customer_segmentation.csv
-│   │
-│   ├── data_transformation/
-│   │   ├── transformed_data.npy
-│   │   └── transformer.pkl
-│   │
-│   ├── data_clustering/
-│   │   ├── train.npy
-│   │   ├── test.npy
-│   │   └── labels.csv
-│   │
-│   ├── model_trainer/
-│   │   └── trained_model.pkl
-│   │
-│   └── model_evaluation/
-│       └── metrics.txt
-│
-├── app.py
-├── pages/
-│   └── account_creation.py
-│
-├── requirements.txt
-├── README.md
-└── .env
-
 ---
 
 ## Training Pipeline and Upsert Demo
@@ -149,7 +75,7 @@ customer_segmentation/
  
 ## Prediction Pipeline Demo
 
-![Prediction Pipeline Demo](assets/prediction_pipeline.git)
+![Prediction Pipeline Demo](https://github.com/okanina/customer_segmentation/blob/main/assets/prediction_pipeline.gif)
 
 ---
 
