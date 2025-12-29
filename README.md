@@ -113,14 +113,19 @@ After Clustering: The following clusters and Insights were identified
 These segments enable targeted marketing strategies, such as loyal reward to customers that are associated with clusters that are at risk of churning. The segments are also good for taylored recommentations.
 
 <p align="center">
+  <img src="assets/clusters.png" width="700">
+</p>
+
+cluster 1 and 2 are close to each other which indicate similiarities between these 2 clusters. Cluster 0,1,2, and 4 shows tight point concentration which indicate well defined grouping this support generalization in these clusters. 
+
+<p align="center">
   <img src="assets/newplot.png" width="700">
 </p>
----
 
 ## Limitations
 
 - Labels are not ground truth they are pseudo-labels
-- Data seems to be synthentic + static which does not reflect real-world seasonality 
+- Data seems to be synthentic(though not confirmed on kaggle.) + static which does not reflect real-world seasonality 
 
 ## Future Work
 
