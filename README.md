@@ -107,16 +107,16 @@ Clone the Repo:
 After Clustering: The following clusters and Insights were identified
 
 **cluster 1 and 5**: High-spending loyal customers and high satisfation. Cluster 5 with high frequent purchases.
-**cluster 2 and 3**: Moderate spenders, mostly neutral and disatisfied customers at-risk of churning customers
-**Cluster 0 and 4**: Low spenders, also mostly neutral and disatisfied customers at-risk of churning customers.
+**cluster 2 and 3**: Moderate spenders, mostly neutral and dissatisfied customers at-risk of churning customers
+**Cluster 0 and 4**: Low spenders, also mostly neutral and dissatisfied customers at-risk of churning customers.
 
-These segments enable targeted marketing strategies, such as loyal reward to customers that are associated with clusters that are at risk of churning. The segments are also good for taylored recommentations.
+These segments enable targeted marketing strategies, such as loyal reward to customers that are associated with clusters that are at risk of churning. The segments are also good for tailored recommendations.
 
 <p align="center">
   <img src="assets/clusters.png" width="700">
 </p>
 
-cluster 1 and 2 are close to each other which indicate similiarities between these 2 clusters. Cluster 0,1,2, and 4 shows tight point concentration which indicate well defined grouping this support generalization in these clusters. 
+cluster 1 and 2 are close to each other which indicate similarities between these 2 clusters. Cluster 0,1,2, and 4 shows tight point concentration which indicate well defined grouping this support generalization in these clusters. 
 
 <p align="center">
   <img src="assets/newplot.png" width="700">
@@ -125,7 +125,7 @@ cluster 1 and 2 are close to each other which indicate similiarities between the
 ## Limitations
 
 - Labels are not ground truth they are pseudo-labels
-- Data seems to be synthentic(though not confirmed on kaggle.) + static which does not reflect real-world seasonality 
+- Data seems to be synthetic(though not confirmed on kaggle.) + static which does not reflect real-world seasonality 
 
 ## Future Work
 
